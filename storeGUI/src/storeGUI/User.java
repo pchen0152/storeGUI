@@ -1,15 +1,15 @@
 package storeGUI;
 
 public class User {
-	public static void userCredentials(String adminUser, String storeUser) {
-		adminUser = "Admin";
-		storeUser = "Manager";
-	}
-		
+	private String[] admin = { "Admin", "Passw0rd" }; 
+	private String[] user = { "User", "Password123" };
 	
-	public static void passCredentials(String adminPass, String storePass) {
-		storePass = "Password123";
-		adminPass = "Passw0rd";
+	public String[] getAdmin() {
+		return admin;
+	}
+	
+	public String[] getUser() {
+		return user;
 	}
 	
 }

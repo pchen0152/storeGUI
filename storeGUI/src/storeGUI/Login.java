@@ -3,6 +3,7 @@ package storeGUI;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import storeGUI.User;
 
 class Login {
 
@@ -12,18 +13,14 @@ class Login {
 	private String adminUser = "Admin";
 	private String storeUser = "Manager";
 
-	private String[] admin = { "Admin", "Passw0rd" };
-	private String[] user = { "Manager", "Password123" };
-
-	public void enterCredentials() {
-		String Username;
-		String Password;
-
+	public static int enterCredentials() {
 		String userInput;
-		List<Product> productList = new ArrayList<Product>(); // Initialize empty linkedList
+		List<Product> productList = new ArrayList<Product>(); // Initialize empty List
 
 		System.out.print("Welcome to the login Page: \n\n");
 
+		return enterUserAndPass();
+		//calls enter user
 		/*
 		 * if ((Username == "Admin") && (Password == "Passw0rd")) {
 		 * System.out.println("You have now login as an Administrator"); //Administrator
@@ -55,21 +52,23 @@ class Login {
 		 */
 	}
 
-	public void enterUserAndPass(String username, String password) {
-		System.out.println("Username: ");
-		username = keyboard.nextLine();
+	public static int enterUserAndPass() {
+		User user = new User();
+		System.out.print("Username: ");
+		String username = keyboard.nextLine();
 			
 		System.out.print("Password: ");
-		password = keyboard.nextLine();
-		validateCredentials(username, password, admin, user);
+		String password = keyboard.nextLine();
+
+		return validateCredentials(username, password, user.getAdmin(), user.getUser());
 	}
 
-	public int validateCredentials(String username, String password, String[] compare1, String[] compare2) {
-		if (username == compare1[0] && password == compare1[1]) {
+	public static int validateCredentials(String username, String password, String[] adminAccount, String[] userAccount) {
+		if (username == adminAccount[0] && password == adminAccount[1]) {
 			return 1; 
 		}
 		
-		if (username == compare2[0] && password == compare2[1]) {
+		if (username == userAccount[0] && password == userAccount[1]) {
 			return 2;
 		}
 
