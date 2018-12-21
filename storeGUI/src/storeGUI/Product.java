@@ -5,13 +5,6 @@ public class Product {
 	private String prodName;
 	private double prodPrice;
 	private int numOfItem;
-	
-	//Constructor - Initializes product objects
-	/*
-	 * public Product(String prodName, double prodPrice, int numOfItem) {
-	 * this.prodName = prodName; this.prodPrice = prodPrice; this.numOfItem =
-	 * numOfItem; }
-	 */
 
 	public String toString() {
 		return "\nProduct Name: " + prodName + "\nPrice: " + prodPrice + "\nNumber in storage: " + numOfItem;

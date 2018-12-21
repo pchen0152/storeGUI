@@ -9,14 +9,16 @@ import java.util.List;
 public class Main {
 	
 	public static void main(String[] args) {
-		int accountAccess;
-		
 		System.out.print("Welcome to the login Page: \n\n");
+		
+		// to be able to use the MenuType class(nonstatic)
+		// is to declare new instance of the class shown below
 		List<Product> productList = new ArrayList<>();
 		MenuType menuType = new MenuType(productList);
 		
+		int accountAccess; // declared outside of loop for while condition
 		do {
-			accountAccess = Login.enterCredentials();
+			accountAccess = Login.enterCredentials(); 
 			if (accountAccess == 1) {
 				// go into admin menu
 				menuType.adminMenu();

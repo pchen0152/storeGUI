@@ -15,21 +15,19 @@ public class Menu {
 		_lineIn = _title.replaceAll(".", "-");
 	}
 
-	
-
 	public MenuChoice displayAndChoose() {
 		boolean valid;
 		int numericChoice = 0;
 		do {
-			display();
-			System.out.print("Choice: ");
-			String lineEntered = _keyboard.nextLine();
+			display(); // display choices
+			System.out.print("Choice: "); // awaiting input
+			String lineEntered = _keyboard.nextLine(); // take in user input
 
 			try {
-				numericChoice = Integer.parseInt(lineEntered);
-				valid = (numericChoice >= 1) && (numericChoice <= (_choices.size()));
+				numericChoice = Integer.parseInt(lineEntered); //parse input
+				valid = (numericChoice >= 1) && (numericChoice <= (_choices.size())); //validated if choice exist
 			} catch (Exception e) {
-				valid = false;
+				valid = false; // choice does not exist
 			}
 
 			if (!valid) {
@@ -38,7 +36,6 @@ public class Menu {
 		} while (!valid);
 		return _choices.get(numericChoice - 1);
 	}
-
 	
 	private void display() {
 		System.out.println();
