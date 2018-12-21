@@ -1,37 +1,24 @@
 package storeGUI;
 
-public class Product {
-	String prodCode;			//declaring the variables in the product object
-	String prodName;
-	String prodDescription;
-	String prodPrice;
-	String prodAvailability;
-	int numOfProducts;
+public class Product {			
+	//declaring the variables in the product object
+	private String prodName;
+	private double prodPrice;
+	private int numOfItem;
 	
 	//Constructor - Initializes product objects
-	public Product(String prodCode, String prodName, String prodDescription, String prodPrice, String prodAvailability,
-			String numOfProducts) {
-		this.prodCode = prodCode;
-		this.prodName = prodName;
-		this.prodDescription = prodDescription;
-		this.prodPrice = prodPrice;
-		this.prodAvailability = prodAvailability;
-		//this.numOfProducts = numOfProducts;
-	}
+	/*
+	 * public Product(String prodName, double prodPrice, int numOfItem) {
+	 * this.prodName = prodName; this.prodPrice = prodPrice; this.numOfItem =
+	 * numOfItem; }
+	 */
 
 	public String toString() {
-		return "Product Code: " + prodCode + "Product Name: " + prodName;
+		return "\nProduct Name: " + prodName + "\nPrice: " + prodPrice + "\nNumber in storage: " + numOfItem;
 		
 	}
 	
 	//Get and Set Methods for variables
-	public String getProdCode() {
-		return prodCode;
-	}
-
-	public void setProdCode(String prodCode) {
-		this.prodCode = prodCode;
-	}
 
 	public String getProdName() {
 		return prodName;
@@ -41,33 +28,20 @@ public class Product {
 		this.prodName = prodName;
 	}
 
-	public String getProdDescription() {
-		return prodDescription;
-	}
-
-	public void setProdDescription(String prodDescription) {
-		this.prodDescription = prodDescription;
-	}
-
-	/*public int getProdPrice() {
+	public double getProdPrice() {
 		return prodPrice;
 	}
-	public void setProdPrice(int prodPrice) {
+	
+	public void setProdPrice(double prodPrice) {
 		this.prodPrice = prodPrice;
 	}
-	public boolean isProdAvailability() {
-		return prodAvailability;
-	}
-	public void setProdAvailability(boolean prodAvailability) {
-		this.prodAvailability = prodAvailability;
-	}*/
 
-	public int getNumOfProducts() {
-		return numOfProducts;
+	public int getNumOfItem() {
+		return numOfItem;
 	}
 
-	public void setNumOfProducts(int numOfProducts) {
-		this.numOfProducts = numOfProducts;
+	public void setNumOfItem(int numOfItem) {
+		this.numOfItem = numOfItem;
 	}
 
 }

@@ -57,24 +57,6 @@ public class Menu {
 	public void addMenuChoice(MenuChoice menuChoice) {
 		_choices.add(menuChoice);
 	}
-
 	
 	
-	// kljlkj
-	public static void adminMenu() {
-		System.out.println("You have now login as an Administrator\n"); // Administrator
-
-		/*
-		 * 1.) Create product list 2.) View product list 3.) Edit product list 4.)
-		 * Logout
-		 */
-
-		System.out.println("Please enter a number.\n\n" + "1.) Create product list\n" + "2.) View product list\n"
-				+ "3.) Edit product list\n" + "4.) Logout\n");
-
-	}
-
-	public static void userMenu() {
-
-	}
 }
